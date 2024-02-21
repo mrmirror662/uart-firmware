@@ -1,4 +1,4 @@
-CC=avr-gcc
+CC=avr-g++
 CFLAGS= -Os -DF_CPU=16000000 -mmcu=atmega328p
 
 all: blink.out
@@ -6,7 +6,7 @@ all: blink.out
 
 USBPORT:=COM5
 
-%.out: %.c
+%.out: %.cpp
 	$(CC) $(CFLAGS) $< -o $@
 
 %.hex: %.out
